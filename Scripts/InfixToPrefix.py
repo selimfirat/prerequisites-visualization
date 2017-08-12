@@ -49,7 +49,7 @@ def infixToPrefix(reqs):
     #adds the remaining words to prefix.
     while st:
         if st[-1] is not '(':
-            prefix += st.pop();
+            prefix += st.pop() + ' ';
         else:
             st.pop();
 
