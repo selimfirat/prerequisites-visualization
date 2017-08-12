@@ -8,54 +8,6 @@ Return: The prerequisite string, prefix
 def infixToPrefix(reqs):
     # the stack to hold the operations
     st = [];
-    #initializes the prefix expression
-    prefix = "";
-    #temporary prefix to hold the parts in parantheses
-    temp_prefix = " ";
-
-    #removes all spaces
-    reqs = reqs.replace(" ", "");
-    #replaces language with logical operators
-    reqs = reqs.replace('and', '&');
-    reqs = reqs.replace('or', '|');
-
-    #prefix is constructed here
-    for ch in reqs:
-        #if (, then adds to stack
-        if ch is '(':
-            st.append(ch);
-        #if operator, then updates the temp if necessary and then adds to stack
-        elif ch is '|' or ch is '&':
-            if st and st[-1] is not '(':
-                temp_prefix = st.pop() + temp_prefix;
-            temp_prefix += " ";
-            st.append(ch);
-        #if ), then updates the temp if necessary and then adds to prefix
-        elif ch is ')':
-            if st and st[-1] is not '(':
-                temp_prefix = st.pop() + temp_prefix;
-            prefix += temp_prefix + " ";
-            #resetting temp
-            temp_prefix = "";
-        #else, directly add to temp
-        else:
-            temp_prefix += ch;
-    """
-        If there are no parantheses, then prefix is empty, temp is nonempty.
-        So, temp is added to prefix.
-    """
-    prefix += temp_prefix;
-    #adds the operators behind parantheses
-    while st:
-        temp = st.pop()
-        if temp is not '(':
-            prefix = temp + prefix;
-
-    return prefix;
-
-def myInfixToPrefix(reqs):
-    # the stack to hold the operations
-    st = [];
     # initializes the prefix expression
     prefix = "";
     # temporary prefix to hold the parts in parantheses
@@ -106,4 +58,4 @@ def myInfixToPrefix(reqs):
 #reqs = "(MATH 101 and MATH 102) or CS102";
 
 #print(reqs)
-#print(myInfixToPrefix(reqs))
+#print(infixToPrefix(reqs))
