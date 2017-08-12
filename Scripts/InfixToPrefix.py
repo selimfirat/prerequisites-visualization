@@ -44,7 +44,7 @@ def infixToPrefix(reqs):
             temp_prefix += ch;
 
     #if the last prereg is not in parantheses, it is nonempty. Adds that to prefix.
-    prefix += temp_prefix;
+    prefix += temp_prefix + ' ';
 
     #adds the remaining words to prefix.
     while st:
