@@ -6,7 +6,6 @@ This project aims to visualize prerequisites of courses in Bilkent University.
 ## Usage
 * `npm install`
 * `npm run start`
-* or `npm run storybook`
 
 ## Build
 * `npm run build`

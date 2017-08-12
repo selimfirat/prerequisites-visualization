@@ -1,0 +1,148 @@
+.top-bar {
+    background: #2a4466;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 100;
+    display: flex;
+    box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+}
+.top-bar .top-bar-content {
+    display: flex;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+    width: 1280px;
+}
+
+.top-bar .logo {
+    color: #fff;
+    flex: 0 0 250px;
+    padding: 13px 20px;
+    margin-right: 15px;
+    line-height: 16px;
+}
+
+.top-bar .search-box {
+    background: hsla(0,0%,100%,.15);
+    border-radius: 3px;
+    position: relative;
+    display: flex;
+    flex: 1;
+}
+.top-bar .search-box.is-focused {
+    background-color: #ffffff;
+}
+
+.search-box form {
+    display: flex;
+    margin: 0;
+    position: relative;
+    width: 100%;
+}
+
+.search-box .search-input {
+    display: block;
+    box-shadow: none;
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px 10px 10px;
+    width: 100%;
+    flex: 3;
+    border: none;
+    height: auto;
+    line-height: normal;
+}
+.search-box .search-input:focus {
+    outline: 0;
+}
+
+.search-box.is-focused .search-input {
+    color: #444
+}
+
+.search-box .search-submit {
+    height: 40px;
+    visibility: hidden;
+    display: none;
+}
+
+.search-box .search-icon {
+    margin: 10px 0 0 15px;
+    opacity: .3;
+}
+.search-box .search-icon:before {
+    content: "";
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KCgo8IS0tIFRoZSBpY29uIGNhbiBiZSB1c2VkIGZyZWVseSBpbiBib3RoIHBlcnNvbmFsIGFuZCBjb21tZXJjaWFsIHByb2plY3RzIHdpdGggbm8gYXR0cmlidXRpb24gcmVxdWlyZWQsIGJ1dCBhbHdheXMgYXBwcmVjaWF0ZWQuIApZb3UgbWF5IE5PVCBzdWItbGljZW5zZSwgcmVzZWxsLCByZW50LCByZWRpc3RyaWJ1dGUgb3Igb3RoZXJ3aXNlIHRyYW5zZmVyIHRoZSBpY29uIHdpdGhvdXQgZXhwcmVzcyB3cml0dGVuIHBlcm1pc3Npb24gZnJvbSBpY29ubW9uc3RyLmNvbSAtLT4KCgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgoKPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoKCSB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KCjxwYXRoIGlkPSJtYWduaWZpZXItMi1pY29uIiBkPSJNNDYwLjM1NSw0MjEuNTlMMzUzLjg0NCwzMTUuMDc4YzIwLjA0MS0yNy41NTMsMzEuODg1LTYxLjQzNywzMS44ODUtOTguMDM3CgoJQzM4NS43MjksMTI0LjkzNCwzMTAuNzkzLDUwLDIxOC42ODYsNTBDMTI2LjU4LDUwLDUxLjY0NSwxMjQuOTM0LDUxLjY0NSwyMTcuMDQxYzAsOTIuMTA2LDc0LjkzNiwxNjcuMDQxLDE2Ny4wNDEsMTY3LjA0MQoKCWMzNC45MTIsMCw2Ny4zNTItMTAuNzczLDk0LjE4NC0yOS4xNThMNDE5Ljk0NSw0NjJMNDYwLjM1NSw0MjEuNTl6IE0xMDAuNjMxLDIxNy4wNDFjMC02NS4wOTYsNTIuOTU5LTExOC4wNTYsMTE4LjA1NS0xMTguMDU2CgoJYzY1LjA5OCwwLDExOC4wNTcsNTIuOTU5LDExOC4wNTcsMTE4LjA1NmMwLDY1LjA5Ni01Mi45NTksMTE4LjA1Ni0xMTguMDU3LDExOC4wNTZDMTUzLjU5LDMzNS4wOTcsMTAwLjYzMSwyODIuMTM3LDEwMC42MzEsMjE3LjA0MQoKCXoiLz4KCjwvc3ZnPgoK) no-repeat 0 0;
+    background-size: contain;
+    height: 20px;
+    width: 20px;
+    display: block;
+}
+
+.search-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #f4f4f4;
+}
+.search-input::-moz-placeholder { /* Firefox 19+ */
+    color: #f4f4f4;
+}
+.search-input:-ms-input-placeholder { /* IE 10+ */
+    color: #f4f4f4;
+}
+.search-input:-moz-placeholder { /* Firefox 18- */
+    color: #f4f4f4;
+}
+
+.search-box.is-focused .search-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #444;
+}
+.search-box.is-focused .search-input::-moz-placeholder { /* Firefox 19+ */
+    color: #444;
+}
+.search-box.is-focused .search-input:-ms-input-placeholder { /* IE 10+ */
+    color: #444;
+}
+.search-box.is-focused .search-input:-moz-placeholder { /* Firefox 18- */
+    color: #444;
+}
+
+.search-box.is-focused .spinning-loader, .spinning-loader:after {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.spinning-loader {
+    font-size: 10px;
+    position: relative;
+    text-indent: -9999em;
+    border-top: 2px solid rgba(0,0,0,.2);
+    border-right: 2px solid rgba(0,0,0,.2);
+    border-bottom: 2px solid rgba(0,0,0,.2);
+    border-left: 2px solid #000;
+    transform: translateZ(0);
+    animation: spinning-loader 1.1s infinite linear;
+}
+
+.search-loader {
+    flex: 0 20px 20px;
+    align-self: flex-end;
+    margin: 10px;
+}
+
+@keyframes spinning-loader{
+    0%{
+        -webkit-transform:rotate(0deg);
+        transform:rotate(0deg)
+    }
+    to
+    {
+        -webkit-transform:rotate(1turn);
+        transform:rotate(1turn)
+    }
+}

@@ -1,0 +1,58 @@
+.action-bar {
+    display: flex;
+    flex-flow: column wrap;
+    margin: 0 15px 15px;
+}
+
+.action-bar-row {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 0 10px;
+}
+
+.action-bar .stats{
+    align-self: flex-start;
+    flex: 1;
+    line-height: 30px;
+}
+
+.action-bar .selected-filters {
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: 10px;
+}
+
+.selected-filters .selected-filters-option {
+    background: #f4f4f4;
+    border: none;
+    display: flex;
+    padding: 10px 0 10px 10px;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 3px;
+    flex: 0 0 auto;
+    margin: 0 10px 10px 0;
+}
+.selected-filters-option-text {
+    flex: auto;
+    color: #08c;
+}
+.selected-filters-option-remove {
+    flex: auto;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 18px;
+    color: #08c;
+    font-weight: 700;
+    border-left: 1px solid #ddd;
+    padding: 0 15px 0 10px;
+    margin-left: 10px;
+}
+
+.selected-filters .reset-filters {
+    text-align: center;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #08c;
+}
