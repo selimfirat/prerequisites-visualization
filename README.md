@@ -1,4 +1,4 @@
-# prerequisites-visuzalitation
+# prerequisites-visualization
 Work in progress...
 
 This project aims to visualize prerequisites of courses in Bilkent University.
