@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './ActionBar.css'
 
-
 class ActionBar extends Component {
 
     render() {
+        return (<div/>)
+        /*
         return (
             <div className="action-bar">
                 <div className="action-bar-row">
@@ -34,7 +35,7 @@ class ActionBar extends Component {
                     </div>
                 </div>
             </div>
-        )
+        )*/
     }
 
 }

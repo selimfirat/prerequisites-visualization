@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
 import './Filters.css'
-
 import {
-    ComboBox
-} from 'office-ui-fabric-react/lib/ComboBox';
-import { SelectableOptionMenuItemType } from 'office-ui-fabric-react/lib/utilities/selectableOption/SelectableOption.Props';
-
-import {
-    GroupedList,
-    IGroup
+    GroupedList
 } from 'office-ui-fabric-react/lib/components/GroupedList/index';
-import { IColumn } from 'office-ui-fabric-react/lib/DetailsList';
 import { DetailsRow } from 'office-ui-fabric-react/lib/components/DetailsList/DetailsRow';
 import {
     FocusZone
@@ -68,7 +60,7 @@ class Filters extends Component {
         _groups = _groups || createGroups(groupCount, groupDepth, 0, groupCount);
 
         this._onRenderCell = this._onRenderCell.bind(this);
-        this._selection = new Selection;
+        this._selection = new Selection();
         this._selection.setItems(_items);
     }
 

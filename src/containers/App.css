@@ -8,7 +8,6 @@
     display: flex;
     margin: 60px auto 0;
     min-width: 600px;
-    max-width: 1280px;
 }
 
 .app-sidebar {
@@ -22,7 +21,6 @@
 }
 
 .app-main {
-    padding: 15px 0;
     background: #fff;
     margin: 15px;
     flex: auto;
