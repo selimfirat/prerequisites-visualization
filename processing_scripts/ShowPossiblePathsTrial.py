@@ -17,16 +17,7 @@ def operationAnd(operand1, operand2):
 
 
 def operationOr(operand1, operand2):
-    bool = 0
-    if not isinstance(operand1, list):
-        bool += 1
-        operand1 = [[operand1]]
-    if not isinstance(operand2, list):
-        bool += 2
-        operand2 = [[operand2]]
-
-    if bool is 3:
-        return [operand1 + operand2]
+    #function
 
 
 
