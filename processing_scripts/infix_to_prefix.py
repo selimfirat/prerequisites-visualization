@@ -1,11 +1,12 @@
 #InfixToPrefix
+#@Author: Atakan
 
 """
 Parameters: The prerequisite string, infix
 Return: The prerequisite string, prefix
 """
 
-def infixToPrefix(reqs):
+def convert_infix_to_prefix(reqs):
     # the stack to hold the operations
     st = [];
     # initializes the prefix expression
