@@ -23,5 +23,5 @@ def save_as_json(file_name, data):
         print(file_name + " have successfully created.")
 
 
-final_data = process_courses(file_name="departments.json")
-save_as_json(file_name="data.json", data=final_data)
+final_data = process_courses(file_name="../data/departments_original.json")
+save_as_json(file_name="../data/departments.json", data=final_data)

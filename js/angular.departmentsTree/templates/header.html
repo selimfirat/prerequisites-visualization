@@ -1,0 +1,25 @@
+<uif-nav-bar uif-overlay="dark">
+
+    <uif-nav-bar-item class="menu-departments">
+        <uif-content><uif-icon uif-type="settings"></uif-icon> Departments</uif-content>
+    </uif-nav-bar-item>
+
+    <uif-nav-bar-item ng-if="selectedDepartment" class="current-department">
+        <uif-content><uif-icon uif-type="arrowDownRight"></uif-icon> {{ selectedDepartment }}</uif-content>
+    </uif-nav-bar-item>
+
+    <uif-nav-bar-item uif-position="right">
+        <uif-content><uif-icon uif-type="info"></uif-icon>About</uif-content>
+    </uif-nav-bar-item>
+
+</uif-nav-bar>
+
+<div style="width: 100%; margin: 5px auto; text-align: center;" ng-if="isShowDepartments">
+    <uif-button style="margin: 3px; width: 120px;" uif-type="primary" ng-repeat="department in departmentsList" ng-click="selectDepartment(department.code)">{{ department.code }}</uif-button>
+
+</div>
+
+<div style="width: 100%; margin: 5px auto; text-align: center;" ng-if="isShowCurrentDepartment">
+    <uif-button style="margin: 3px; width: 120px;" uif-type="primary" ng-repeat="course in coursesList">{{ course.code }}</uif-button>
+
+</div>

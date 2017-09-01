@@ -17,8 +17,8 @@ def convert_infix_to_prefix(reqs):
     # removes all spaces
     reqs = reqs.replace(" ", "");
     # replaces language with logical operators
-    reqs = reqs.replace('and', '&');
-    reqs = reqs.replace('or', '|');
+    reqs = reqs.replace('and', '&').replace("AND", "&");
+    reqs = reqs.replace('or', '|').replace("OR", "|");
 
     # prefix is constructed here
     for ch in reqs:

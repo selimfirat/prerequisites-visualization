@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bilkent Prerequisites Visualization</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/tree.css" />
+
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <!-- add Office UI Fabric stylesheets (there are minified options too) -->
+        <link rel="stylesheet" href="./node_modules/office-ui-fabric/dist/css/fabric.css">
+        <link rel="stylesheet" href="./node_modules/office-ui-fabric/dist/css/fabric.components.css">
+
+    </head>
+    <body>
+        <div ng-app="ChartsApp">
+            <div class="ms-Grid">
+                <div class="ms-Grid-row">
+                    <div ng-controller="headerCtrl">
+                        <ng-include src="'js/angular.architectureTree/templates/header.html'"></ng-include>
+                    </div>
+                </div>
+
+                <div class="ms-Grid-row">
+                    <div ng-controller="chartCtrl">
+                        <tree-chart data="data" diameter="960"></tree-chart>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <script src="js/vendor/d3.v3.js"></script>
+        <script src="js/vendor/angular.min.js"></script>
+        <script src="js/d3.departmentsTree.js"></script>
+        <script src="./node_modules/ng-office-ui-fabric/ngOfficeUiFabric.js"></script>
+        <script src="js/angular.departmentsTree/app.js"></script>
+        <script src="js/angular.departmentsTree/controllers/chart.js"></script>
+        <script src="js/angular.departmentsTree/controllers/filter.js"></script>
+        <script src="js/angular.departmentsTree/controllers/header.js"></script>
+        <script src="js/angular.departmentsTree/controllers/panel.js"></script>
+        <script src="js/angular.departmentsTree/directives/tree-chart.js"></script>
+        <script src="js/angular.departmentsTree/directives/init-focus.js"></script>
+        <script src="js/angular.departmentsTree/services/data.js"></script>
+        <script src="js/angular.departmentsTree/services/bus.js"></script>
+
+    </body>
+</html>

@@ -1,7 +1,0 @@
-*, :after, :before {
-  box-sizing: inherit;
-}
-
-.is-hidden {
-  display: none;
-}
