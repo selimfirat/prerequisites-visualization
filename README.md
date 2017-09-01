@@ -1,15 +1,11 @@
 # prerequisites-visualization
-Work in progress...
-
 This project aims to visualize prerequisites of courses in Bilkent University.
 
-## Usage
-* `npm install`
-* `npm run start`
-* or `npm run storybook`
+* __Temporary Url:__ https://mrsfy.github.io/prerequisites-visualization/
 
-## Build
-* `npm run build`
+## Github Pages Publish
+* `npm install -g gh-pages`
+* `gh-pages -d .`
 
 ## Contribution Guideline
 * All contributions are welcome. Please do not hesitate to contact.
