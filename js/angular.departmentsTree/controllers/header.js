@@ -1,55 +1,56 @@
 angular.module('ChartsApp').controller('headerCtrl', function ($scope, bus) {
     'use strict';
 
+    let creatorsDialogComponent;
+
+    $scope.init = function () {
+        setTimeout(function () {
+            // CommandBar
+            let CommandBarElements = document.querySelectorAll(".ms-CommandBar");
+            for (let i = 0; i < CommandBarElements.length; i++) {
+                new fabric['CommandBar'](CommandBarElements[i]);
+            }
+
+            // Personas
+            var PersonaElements = document.querySelectorAll(".ms-Persona");
+            for (var i = 0; i < PersonaElements.length; i++) {
+                new fabric['Persona'](PersonaElements[i]);
+            }
+
+            // Dialog
+            let dialog = document.querySelector(".ms-Dialog");
+            creatorsDialogComponent = new fabric['Dialog'](dialog);
+        }, 1);
+    };
+
+    $scope.showCreatorsDialog = function () {
+        creatorsDialogComponent.open();
+    };
+
+
     $scope.isShowDepartments = false;
     $scope.isShowCurrentDepartment = false;
+    $scope.isCurrentDepartmentSelected = false;
+    $scope.currentDepartmentCode = "";
 
     let allDepartments;
 
-    let showDepartments = function () {
-        $scope.isShowDepartments = true;
-    };
-
-    let hideDepartments = function () {
-        $scope.isShowDepartments = false;
-    };
-
-    let showCurrentDepartment = function () {
-        $scope.isShowCurrentDepartment = true;
-    };
-
-    let hideCurrentDepartment = function () {
+    $scope.toggleDepartments = function () {
+        $scope.isShowDepartments = !$scope.isShowDepartments;
         $scope.isShowCurrentDepartment = false;
     };
 
-    let menuItems = [{
-        className: "current-department",
-        hideMethod: hideCurrentDepartment,
-        showMethod: showCurrentDepartment
-    }, {
-        className: "menu-departments",
-        hideMethod: hideDepartments,
-        showMethod: showDepartments
-    }];
-
-    menuItems.forEach(function (obj) {
-        $scope.$watch(function() {
-            return angular.element(document.getElementsByClassName(obj.className)).hasClass('is-selected');
-        }, function(curItem){
-
-                if (curItem)
-                    obj.showMethod.call();
-                else
-                    obj.hideMethod.call();
-            });
-    });
-
+    $scope.toggleCurrentDepartment = function () {
+        $scope.isShowCurrentDepartment = !$scope.isShowCurrentDepartment;
+        $scope.isShowDepartments = false;
+    };
 
 
     $scope.selectDepartment = function (departmentCode) {
-        $scope.selectedDepartment = departmentCode;
+        $scope.isCurrentDepartmentSelected = true;
+        $scope.currentDepartment = departmentCode;
         $scope.coursesList = allDepartments[departmentCode].courses;
-        hideDepartments();
+        $scope.toggleCurrentDepartment();
         bus.emit("updateCurrentDepartment", departmentCode);
         setTimeout(function() {
             angular.element(document.getElementsByClassName("current-department")).triggerHandler("click");

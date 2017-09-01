@@ -1,24 +1,101 @@
-<uif-nav-bar uif-overlay="dark">
+<div class="ms-CommandBar ms-CommandBar--navBar" ng-init="init()">
+    <div class="ms-CommandBar-sideCommands">
+        <div class="ms-CommandButton ms-CommandButton">
+            <button class="ms-CommandButton-button" ng-click="showCreatorsDialog()">
+                <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--People"></i></span>
+                <span class="ms-CommandButton-label">Creators</span>
+            </button>
+        </div>
+        <div class="ms-CommandButton ms-CommandButton">
+            <button class="ms-CommandButton-button" ng-click="showCreatorsDialog()">
+                <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--Info"></i></span>
+                <span class="ms-CommandButton-label">Help</span>
+            </button>
+        </div>
+    </div>
+    <div class="ms-CommandBar-mainArea">
+        <div ng-class="isShowDepartments ? 'ms-CommandButton ms-CommandButton--pivot is-active' : 'ms-CommandButton ms-CommandButton--pivot'" ng-click="toggleDepartments()">
+            <a class="ms-CommandButton-button">
+                <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--AADLogo"></i></span>
+                <span class="ms-CommandButton-label">Departments</span>
+            </a>
+        </div>
+        <div ng-if="isCurrentDepartmentSelected" ng-class="isShowCurrentDepartment ? 'ms-CommandButton ms-CommandButton--pivot is-active' : 'ms-CommandButton ms-CommandButton--pivot'" ng-click="toggleCurrentDepartment()">
+            <a class="ms-CommandButton-button">
+                <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--GroupedList"></i></span>
+                <span class="ms-CommandButton-label">{{ currentDepartment }}</span>
+            </a>
+        </div>
+    </div>
+</div>
 
-    <uif-nav-bar-item class="menu-departments">
-        <uif-content><uif-icon uif-type="settings"></uif-icon> Departments</uif-content>
-    </uif-nav-bar-item>
-
-    <uif-nav-bar-item ng-if="selectedDepartment" class="current-department">
-        <uif-content><uif-icon uif-type="arrowDownRight"></uif-icon> {{ selectedDepartment }}</uif-content>
-    </uif-nav-bar-item>
-
-    <uif-nav-bar-item uif-position="right">
-        <uif-content><uif-icon uif-type="info"></uif-icon>About</uif-content>
-    </uif-nav-bar-item>
-
-</uif-nav-bar>
 
 <div style="width: 100%; margin: 5px auto; text-align: center;" ng-if="isShowDepartments">
-    <uif-button style="margin: 3px; width: 120px;" uif-type="primary" ng-repeat="department in departmentsList" ng-click="selectDepartment(department.code)">{{ department.code }}</uif-button>
-
+    <button class="ms-Button ms-Button--primary" style="margin: 3px; width: 120px;" ng-repeat="department in departmentsList" ng-click="selectDepartment(department.code)">
+        <span class="ms-Button-label">{{ department.code }}</span>
+    </button>
 </div>
 
 <div style="width: 100%; margin: 5px auto; text-align: center;" ng-if="isShowCurrentDepartment">
-    <uif-button style="margin: 3px; width: 120px;" uif-type="primary" ng-repeat="course in coursesList">{{ course.code }}</uif-button>
+    <button class="ms-Button" style="margin: 3px; width: 120px;" ng-repeat="course in coursesList" ng-click="selectCourse(course.code)">
+        <span class="ms-Button-label">{{ course.code }}</span>
+    </button>
+</div>
+
+<div class="ms-Dialog ms-Dialog--multiline">
+    <div class="ms-Dialog-title">Creators</div>
+    <div class="ms-Dialog-content">
+        <div class="ms-Grid">
+            <div class="ms-Grid-row" style="margin: 0 15px 15px 15px;">
+                <label class="ms-Label is-disabled">
+                    We would like to hear any feedback from you!
+                </label>
+            </div>
+
+            <div class="ms-Grid-row" style="margin: 15px;">
+                <div class="ms-Persona">
+                    <div class="ms-Persona-imageArea">
+                        <div class="ms-Persona-initials ms-Persona-initials--orange">SFY</div>
+                    </div>
+                    <div class="ms-Persona-details">
+                        <div class="ms-Persona-primaryText">Selim Fırat Yılmaz</div>
+                        <div class="ms-Persona-secondaryText"><a class="ms-Link" href="mailto:yilmazselimfirat@gmail.com">yilmazselimfirat@gmail.com</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ms-Grid-row" style="margin: 15px;">
+                <div class="ms-Persona">
+                    <div class="ms-Persona-imageArea">
+                        <div class="ms-Persona-initials ms-Persona-initials--green">AB</div>
+                    </div>
+                    <div class="ms-Persona-details">
+                        <div class="ms-Persona-primaryText">Atakan Büyükoğlu</div>
+                        <div class="ms-Persona-secondaryText"><a class="ms-Link" href="mailto:buyukoglu.atakan@gmail.com">buyukoglu.atakan@gmail.com</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ms-Grid-row" style="margin: 15px;">
+                <div class="ms-Persona">
+                    <div class="ms-Persona-imageArea">
+                        <div class="ms-Persona-initials ms-Persona-initials--red">AKK</div>
+                    </div>
+                    <div class="ms-Persona-details">
+                        <div class="ms-Persona-primaryText">Alper Kagan Kayalı</div>
+                        <div class="ms-Persona-secondaryText"><a class="ms-Link" href="mailto:alper.kagan.kayali@gmail.com">alper.kagan.kayali@gmail.com</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ms-Grid-row" style="margin: 15px 15px 0 15px;">
+                <div class="ms-Persona">
+                    <div class="ms-Persona-imageArea">
+                        <div class="ms-Persona-initials ms-Persona-initials--blue">KY</div>
+                    </div>
+                    <div class="ms-Persona-details">
+                        <div class="ms-Persona-primaryText">Kerem Yılmaz</div>
+                        <div class="ms-Persona-secondaryText"><a class="ms-Link" href="mailto:mrkeremyilmaz@gmail.com">mrkeremyilmaz@gmail.com</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
