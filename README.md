@@ -1,6 +1,8 @@
 # prerequisites-visualization
 This project aims to visualize prerequisites of courses in Bilkent University.
 
+* __Note:__ Currently some functionalities does not work. We will fix them as soon as possible.
+
 * __Temporary Url:__ https://mrsfy.github.io/prerequisites-visualization/
 
 ## Github Pages Publish
