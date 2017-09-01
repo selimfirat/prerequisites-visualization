@@ -7,8 +7,8 @@
 
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
         <!-- add Office UI Fabric stylesheets (there are minified options too) -->
-        <link rel="stylesheet" href="./node_modules/office-ui-fabric/dist/css/fabric.css">
-        <link rel="stylesheet" href="./node_modules/office-ui-fabric/dist/css/fabric.components.css">
+        <link rel="stylesheet" href="css/vendor/fabric.min.css">
+        <link rel="stylesheet" href="css/vendor/fabric.components.min.css">
 
     </head>
     <body>
@@ -16,7 +16,7 @@
             <div class="ms-Grid">
                 <div class="ms-Grid-row">
                     <div ng-controller="headerCtrl">
-                        <ng-include src="'js/angular.architectureTree/templates/header.html'"></ng-include>
+                        <ng-include src="'js/angular.departmentsTree/templates/header.html'"></ng-include>
                     </div>
                 </div>
 
@@ -31,7 +31,7 @@
         <script src="js/vendor/d3.v3.js"></script>
         <script src="js/vendor/angular.min.js"></script>
         <script src="js/d3.departmentsTree.js"></script>
-        <script src="./node_modules/ng-office-ui-fabric/ngOfficeUiFabric.js"></script>
+        <script src="js/vendor/ngOfficeUiFabric.min.js"></script>
         <script src="js/angular.departmentsTree/app.js"></script>
         <script src="js/angular.departmentsTree/controllers/chart.js"></script>
         <script src="js/angular.departmentsTree/controllers/filter.js"></script>
