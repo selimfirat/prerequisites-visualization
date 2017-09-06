@@ -154,7 +154,7 @@ angular.module('ChartsApp').service('data', function ($http, $q, bus) {
 
     };
 
-    let defaultDepartment = "CS";
+    let defaultDepartment = "";
     /*
     * Processes departments
      */

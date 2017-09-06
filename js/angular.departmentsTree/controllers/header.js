@@ -1,4 +1,4 @@
-angular.module('ChartsApp').controller('headerCtrl', function ($scope, bus) {
+angular.module('ChartsApp').controller('headerCtrl', function ($scope, bus, $window) {
     'use strict';
 
     let creatorsDialogComponent;
@@ -17,9 +17,10 @@ angular.module('ChartsApp').controller('headerCtrl', function ($scope, bus) {
                 new fabric['Persona'](PersonaElements[i]);
             }
 
-            // Dialog
-            let dialog = document.querySelector(".ms-Dialog");
-            creatorsDialogComponent = new fabric['Dialog'](dialog);
+            // Creators Dialog
+            let creatorsDialog = document.querySelector(".creators-dialog");
+            creatorsDialogComponent = new fabric['Dialog'](creatorsDialog);
+
         }, 1);
     };
 
@@ -28,10 +29,11 @@ angular.module('ChartsApp').controller('headerCtrl', function ($scope, bus) {
     };
 
 
-    $scope.isShowDepartments = false;
+    $scope.isShowDepartments = true;
     $scope.isShowCurrentDepartment = false;
     $scope.isCurrentDepartmentSelected = false;
     $scope.currentDepartmentCode = "";
+    $scope.currentCourseCode = "";
 
     let allDepartments;
 
@@ -55,6 +57,11 @@ angular.module('ChartsApp').controller('headerCtrl', function ($scope, bus) {
         setTimeout(function() {
             angular.element(document.getElementsByClassName("current-department")).triggerHandler("click");
         }, 1);
+    };
+
+    $scope.selectCourse = function (courseCode) {
+        $scope.currentCourseCode = courseCode;
+        $window.open("https://stars.bilkent.edu.tr/syllabus/view/" + courseCode.replace(' ', '/'));
     };
 
     bus.on("updateDepartments", function (departments) {
