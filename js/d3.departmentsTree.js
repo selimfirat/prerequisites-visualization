@@ -45,7 +45,6 @@ d3.chart.architectureTree = function() {
 
         var diagonal = d3.svg.diagonal.radial()
             .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
-        console.log("diagonal", diagonal);
 
         var linkSelection = svg.selectAll(".link").data(links, function(d) {
             return d.source.name + d.target.name + Math.random();
@@ -68,15 +67,15 @@ d3.chart.architectureTree = function() {
                     return;
                 }
                 fade(0.6)(d);
-                document.querySelector('#panel').dispatchEvent(
-                    new CustomEvent("hoverNode", { "detail": d.name })
-                );
             })
             .on('mouseout', function(d) {
                 if(activeNode !== null) {
                     return;
                 }
                 fade(1)(d);
+                svg.selectAll(".node")
+                    .style("font-size", "10px")
+                    .style("font-weight", "normal");
             })
             .on('click', function(d) {
                 // select(d.name);
@@ -196,16 +195,20 @@ d3.chart.architectureTree = function() {
 
     var fade = function(opacity) {
         return function(node) {
-            //if (!node.dependsOn || !(node.parent && node.parent.dependsOn)) return;
-            //var highlighteds = recGetNamesOfChildren(node.children);
 
             svg.selectAll(".node")
                 .filter(function(d) {
-                    if (d.name.indexOf(node.name) > -1) return false;
-                    return node.index.relatedNodes.indexOf(d.name) === -1;
+                    return !(d.name.indexOf(node.text) > -1) && !(d.text.indexOf(node.name.split(' ')[0]) > -1);
                 })
                 .transition()
                 .style("opacity", opacity);
+
+            svg.selectAll(".node")
+                .filter(function (d) {
+                    return d.text === node.text;
+                })
+                .style("font-size", "11px")
+                .style("font-weight", "bold");
         };
     };
 

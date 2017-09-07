@@ -61,6 +61,7 @@ angular.module('ChartsApp').service('data', function ($http, $q, bus) {
         if (!nodes.hasOwnProperty(name)) {
             nodes[name] = {
                 name: name,
+                text: name,
                 children: [],
                 details: course
             };
@@ -69,7 +70,6 @@ angular.module('ChartsApp').service('data', function ($http, $q, bus) {
                 course.details.prerequisite_possible_paths.forEach(function (children) {
                     var childCourses = {}
                     children.forEach(function (courseCode) {
-                        console.log("getCourse", courseCode, course);
                         childCourses[courseCode] = getCourse(courseCode);
 
                         if (!childCourses[courseCode]) {
@@ -105,7 +105,6 @@ angular.module('ChartsApp').service('data', function ($http, $q, bus) {
             };
 
             children.forEach(function (child) {
-                console.log(child);
                 var courseDetails = getCourse(child)
 
                 var node = {
@@ -133,7 +132,6 @@ angular.module('ChartsApp').service('data', function ($http, $q, bus) {
     let setHierarchy = function (department) {
 
         for (var key in nodes) {
-            // console.log("key", key, "dep", department);
             if (key.replace(/[a-zA-Z]/g, '').length === 0)
                 continue;
 
@@ -167,10 +165,10 @@ angular.module('ChartsApp').service('data', function ($http, $q, bus) {
             if (department !== defaultDepartment)
                 continue;
 
-            // console.log("dep", department);
 
             nodes[department] = {
                 name: department,
+                text: department,
                 satisfaction: 0,
                 children: []
             };

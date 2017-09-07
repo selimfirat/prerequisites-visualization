@@ -47,11 +47,18 @@ angular.module('ChartsApp').controller('headerCtrl', function ($scope, bus, $win
         $scope.isShowDepartments = false;
     };
 
+    function sortByKey(array, key) {
+        return array.sort(function(a, b) {
+            var x = a[key]; var y = b[key];
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        });
+    }
 
     $scope.selectDepartment = function (departmentCode) {
         $scope.isCurrentDepartmentSelected = true;
         $scope.currentDepartment = departmentCode;
-        $scope.coursesList = allDepartments[departmentCode].courses;
+        $scope.coursesList = sortByKey(allDepartments[departmentCode].courses, "code");
+
         $scope.toggleCurrentDepartment();
         bus.emit("updateCurrentDepartment", departmentCode);
         setTimeout(function() {

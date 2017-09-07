@@ -7,7 +7,7 @@ html, body {
 }
 
 .node {
-    font: 9px Arial;
+    font: 10px Arial;
 }
 
 .node.notFound {
