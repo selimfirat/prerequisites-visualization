@@ -1,13 +1,12 @@
-# prerequisites-visualization
+# Prerequisites Visualization
 This project aims to visualize prerequisites of courses in Bilkent University.
 
-* __Note:__ Currently some functionalities does not work. We will fix them as soon as possible.
+* Currently deployed to  http://previs.selimfirat.net/
 
-* __Temporary Url:__ https://mrsfy.github.io/prerequisites-visualization/
-
-## Github Pages Publish
-* `npm install -g gh-pages`
-* `gh-pages -d .`
+## Publish to surge.sh
+* `npm install`
+* `npm install -g surge`
+* `surge .`
 
 ## Contribution Guideline
 * All contributions are welcome. Please do not hesitate to contact.
